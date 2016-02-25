@@ -39,6 +39,13 @@
             "metadata": {
                 "description": "The size of the RDSH VMs"
             }
+        },
+        "dcVmSize": {
+            "type": "string",
+            "defaultValue": "Standard_DS2",
+            "metadata": {
+                "description": "The size of the DC VM"
+            }
         }
     },
     "variables": {
@@ -190,7 +197,7 @@
             ],
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS2"
+                    "vmSize": "[parameters('dcVmSize')]"
                 },
                 "osProfile": {
                     "computerName": "dc",
